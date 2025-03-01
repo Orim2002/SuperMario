@@ -84,9 +84,9 @@ public class PlayerMovement : MonoBehaviour
         rigidbody.MovePosition(position);
     }
 
-    public void OollisionEnter2D(Collision2D collision)
+    public void OnCollisionEnter2D(Collision2D collision)
     {
-        if (collision.gameObject.layer != LayerMask.NameToLayer("Enemy")) {
+        if (collision.gameObject.layer == LayerMask.NameToLayer("Enemy")) {
             if (transform.DotTest(collision.transform, Vector2.down)) {
                 velocity.y = jumpForce / 2f;
                 jumping = true;
