@@ -54,16 +54,6 @@ public class GameManager : MonoBehaviour
         SceneManager.LoadScene($"{world}-{stage}");
     }
 
-    public void NextLevel()
-    {
-        if (world == 1 && stage == 10)
-        {
-            LoadLevel(world + 1, 1);
-            return;
-        }
-        LoadLevel(world, stage + 1);
-    }
-
     public void ResetLevel(float delay)
     {
         Invoke(nameof(ResetLevel), delay);
